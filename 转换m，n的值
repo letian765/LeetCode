@@ -1,0 +1,51 @@
+package basis.day02;
+/**
+ * 异或的重要用途：转换m，n的值
+ *
+ */
+public class TestXor {
+
+    public static void main(String[] args){
+        /*
+         * 交换m,n的值
+         */
+        int m = 12;
+        int n = 5;
+
+        /*
+         * 方法一：设置一个中间变量temp
+         */
+        //System.out.println("m = " + m + " n = " + n);
+        //System.out.println("交换");
+        //int temp ;
+        //temp = m;
+        //m = n;
+        //n = temp;
+        //System.out.println("m = " + m + " n = " + n);
+
+        /*
+         * 叠加，再减。缺点不能计算过大的数
+         */
+        //System.out.println("m = " + m + " n = " + n);
+        //System.out.println("交换");
+        //m = m + n;
+        //n = m - n;
+        //m = m - n; 
+        //System.out.println("m = " + m + " n = " + n);
+
+        /*
+
+         * 利用异或的特性
+         * 两个相同的数进行异或(因为每一位都相同)得0,0与任何数异或还是这个数(0,1异或得1;0,0异或得0)
+         * 因此三个数进行异或(其中有两个相同的数)结果为不同于其他两个的数
+         */
+        System.out.println("m = " + m + " n = " + n);
+        System.out.println("交换");
+
+        m = m ^ n;  
+        n = m ^ n;  //(m^n)^n
+        m = n ^ m;  //n^(m^n)   n已经改变为m的值(12)(因此表达式最后结果是n的值赋值给m)
+
+        System.out.println("m = " + m + " n = " + n);
+    }
+}
