@@ -1,4 +1,4 @@
-```java
+```Java
 public class Stack {
 	private ListNode head;
 
