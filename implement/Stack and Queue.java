@@ -1,4 +1,3 @@
-```java
 public class Stack {
 	private ListNode head;
 
@@ -122,4 +121,4 @@ public class Queue {
 		return head + 1 == tail ? null : array[(tail+1) % array.length];
 	}
 }
-```
+
